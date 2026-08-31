@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Waste Sorting Assistant</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .upload {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        .result-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .result-image img {
+            max-width: 90%;
+            border-radius: 10px;
+        }
+
+        .object-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .recyclable {
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>AI Waste Sorting & Recycling Assistant</h1>
+
+    <p style="text-align:center;">
+        Upload an image containing waste objects.
+    </p>
+
+
+    <div class="upload">
+
+        <form action="/analyze"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input type="file"
+                   name="image"
+                   accept="image/*"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+                Analyze Waste
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if error %}
+
+        <p class="error">
+            {{ error }}
+        </p>
+
+    {% endif %}
+
+
+    {% if result_image %}
+
+        <div class="result-image">
+
+            <h2>Detection Result</h2>
+
+            <img src="{{ url_for(
+                'static',
+                filename='results/' + result_image
+            ) }}">
+
+        </div>
+
+    {% endif %}
+
+
+    {% if objects %}
+
+        <h2>Analysis Results</h2>
+
+        {% for obj in objects %}
+
+            <div class="object-card">
+
+                <h3>
+                    {{ obj.label }}
+                </h3>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ obj.category }}
+                </p>
+
+                <p>
+                    <strong>Confidence:</strong>
+                    {{ obj.confidence }}%
+                </p>
+
+                <p class="recyclable">
+
+                    <strong>Recyclable:</strong>
+
+                    {% if obj.recyclable %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+
+                </p>
+
+                <p>
+                    <strong>Disposal:</strong>
+                    {{ obj.disposal }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% elif result_image %}
+
+        <p>
+            No objects were detected.
+        </p>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

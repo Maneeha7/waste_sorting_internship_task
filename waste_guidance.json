@@ -1,0 +1,92 @@
+{
+  "Aluminium foil": {
+    "category": "Metal",
+    "recyclable": true,
+    "disposal": "Clean the foil and place it in the metal recycling stream if accepted."
+  },
+  "Bottle cap": {
+    "category": "Plastic",
+    "recyclable": true,
+    "disposal": "Collect separately and place in plastic recycling where accepted."
+  },
+  "Bottle": {
+    "category": "Plastic",
+    "recyclable": true,
+    "disposal": "Empty and place in the plastic recycling bin."
+  },
+  "Broken glass": {
+    "category": "Glass",
+    "recyclable": false,
+    "disposal": "Handle carefully and dispose according to the local safety guidelines."
+  },
+  "Can": {
+    "category": "Metal",
+    "recyclable": true,
+    "disposal": "Empty and place in the metal recycling bin."
+  },
+  "Carton": {
+    "category": "Cardboard",
+    "recyclable": true,
+    "disposal": "Flatten and place in paper or cardboard recycling."
+  },
+  "Cigarette": {
+    "category": "Other",
+    "recyclable": false,
+    "disposal": "Dispose safely in general waste."
+  },
+  "Cup": {
+    "category": "Other",
+    "recyclable": false,
+    "disposal": "Check the material and local recycling rules before disposal."
+  },
+  "Lid": {
+    "category": "Plastic",
+    "recyclable": true,
+    "disposal": "Place in plastic recycling if accepted locally."
+  },
+  "Other litter": {
+    "category": "Other",
+    "recyclable": false,
+    "disposal": "Inspect the material and dispose according to local waste guidelines."
+  },
+  "Other plastic": {
+    "category": "Plastic",
+    "recyclable": true,
+    "disposal": "Place in the appropriate plastic recycling stream if accepted locally."
+  },
+  "Paper": {
+    "category": "Paper",
+    "recyclable": true,
+    "disposal": "Place clean and dry paper in paper recycling."
+  },
+  "Plastic bag - wrapper": {
+    "category": "Plastic",
+    "recyclable": false,
+    "disposal": "Use a flexible-plastic collection point if available, otherwise follow local disposal rules."
+  },
+  "Plastic container": {
+    "category": "Plastic",
+    "recyclable": true,
+    "disposal": "Empty and place in the plastic recycling bin."
+  },
+  "Pop tab": {
+    "category": "Metal",
+    "recyclable": true,
+    "disposal": "Place in the metal recycling stream."
+  },
+  "Straw": {
+    "category": "Plastic",
+    "recyclable": false,
+    "disposal": "Dispose according to local general waste guidance."
+  },
+  "Styrofoam piece": {
+    "category": "Other",
+    "recyclable": false,
+    "disposal": "Use a dedicated foam collection service if available."
+  },
+  "Unlabeled litter": {
+    "category": "Other",
+    "recyclable": false,
+    "disposal": "Manual inspection is recommended before disposal."
+  }
+}
